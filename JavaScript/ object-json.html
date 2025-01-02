@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width initial-scale=1.0" />
+        <meta charset="utf-8"/>
+        <title>JavaScript 流程控制：迴圈指令</title>
+    </head>
+
+
+    <body>
+
+
+        <script>
+            /*
+           let men=new Object(); // create new object
+           men.name="Hank";
+           men.age=18;
+           men.talk=function(){
+            // use "this" represent object's member
+             console.log("Hello my name is "+this.name+". "+"age:"+this.age)
+           };
+
+           console.log(men.age>20);
+           men.talk();
+           */
+          // use json to create object
+          let men={
+            age:15,
+            name:"Hank",
+            talk:function(){
+                console.log("Hello my name is "+this.name+". "+"age:"+this.age)
+            }
+          };
+          men.talk()
+           
+        </script>
+    </body>
+</html>

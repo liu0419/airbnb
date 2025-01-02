@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width initial-scale=1.0" />
+        <meta charset="utf-8"/>
+        <title>JavaScript html dom 核心觀念</title>
+        <style>
+            
+        </style>
+
+    </head>
+
+
+    <body>
+        <div>
+            <span onclick="changeToAbout()">關於我</span> 
+            <span onclick="changeToExps()">學經歷</span>
+        </div>
+        <hr/>
+        <div id="about">hi my name is Hank</div>
+        <div id="exps" style="display: none;">i study in ntu</div>
+
+        <script>
+            function changeToAbout(){
+                let aboutdiv=document.querySelector("#about");
+                let expsdiv=document.querySelector("#exps");
+                aboutdiv.style.display="block";
+                expsdiv.style.display="none";
+             }
+
+            function changeToExps(){
+                let aboutdiv=document.querySelector("#about");
+                let expsdiv=document.querySelector("#exps");
+                aboutdiv.style.display="none";
+                expsdiv.style.display="block";
+             }
+        </script>
+    </body>
+</html>

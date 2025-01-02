@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width initial-scale=1.0" />
+        <meta charset="utf-8"/>
+        <title>JavaScript 流程控制：迴圈指令</title>
+    </head>
+
+
+    <body>
+
+
+        <script>
+           // create array object
+           let grade=[100,54,69];
+           grade.push(70);
+           grade.push(60);
+           grade.push(80);
+
+           /*
+           console.log(grade);
+           console.log(grade[4]);     
+           console.log(grade.length);  
+           */  
+           
+           let total=0;
+           for(let i=0; i<grade.length;i++){
+                total=total+grade[i];
+           }
+           console.log(total);
+            let avg=total/grade.length ;
+            console.log(avg);
+        </script>
+    </body>
+</html>

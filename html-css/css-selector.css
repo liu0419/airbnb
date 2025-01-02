@@ -1,0 +1,27 @@
+/* 標籤名稱選擇器 */
+body {
+background-color:#ccaaaa
+}
+
+/* id selector */
+#title-1{
+text-decoration: line-through;
+}
+
+/* style選擇器 */     
+.title{
+font-weight: bold;
+font-size: larger; 
+margin-bottom: 10px
+}
+
+.content{
+width: 50% ;
+border: 1px dashed blue ;
+padding: 10px ;
+color: #666666
+}
+
+.keyword{
+color:purple
+}

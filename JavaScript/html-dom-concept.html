@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width initial-scale=1.0" />
+        <meta charset="utf-8"/>
+        <title>JavaScript html dom 核心觀念</title>
+    </head>
+
+
+    <body>
+
+
+        <script>
+            // 認識 window 物件 (html dom 的最上層)
+            console.log(window);
+            // 取得視窗的長度和高度
+            console.log(window.innerHeight,window.innerWidth);
+            //透過screen物件取得物件取得螢幕尺寸
+            console.log(window.screen.width,window.screen.height);
+            //取得網址列內容
+            console.log(window.location.href);
+            //更改網址列內容（跳轉網頁）
+            // window.location.href="https://dictionary.cambridge.org/zht/%E8%A9%9E%E5%85%B8/%E8%8B%B1%E8%AA%9E/uncaught"
+
+            // 認識 document 物件
+            console.log(window.document);
+            console.dir(document);
+            document.title="html dom core concept";
+
+            // 取得body 標籤
+            console.log(document.body);
+            // 更改網頁主畫面的內文（body標籤的內文）
+            console.log(document.body.innerHTML);
+            document.body.innerHTML="Lonely";
+
+
+        </script>
+    </body>
+</html>
