@@ -30,8 +30,8 @@
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav " style="margin-left: auto; padding:0px 20px">
           <li class="nav-item w-60">
-            <div class="searchBar d-flex align-items-center  ">
-              <input id="search-bar" type="text" placeholder="地點 搜尋目的地" class="form-control tranlatable">
+            <div  class="searchBar d-flex align-items-center  ">
+              <input  type="text" placeholder="搜尋 " class="form-control tranlatable">
               <button class="btn">
                 <i class="bi bi-search"></i>
               </button>
@@ -39,9 +39,9 @@
           </li>
         </ul>
         <ul class="navbar-nav" style="align-items: center">
-          <select id="language-select" onchange="changeLanguage()" style="height: 30px;width: 90px; ">
-            <option value="en">English</option>
+          <select id="language-select"  style="height: 30px;width: 90px; ">
             <option value="zh">中文</option>
+            <option value="en">English</option>
             <option value="es">Español</option>
             <!-- 更多語言選項 -->
           </select>
@@ -61,11 +61,11 @@
     <div class="d-flex justify-content-around category-icons image-container">
       <a href="#" class="text-center category-item " data-target="category1">
         <img src="https://a0.muscache.com/pictures/747b326c-cb8f-41cf-a7f9-809ab646e10c.jpg" alt="小木屋">
-        <p class="mb-0">小木屋</p>
+        <p class="mb-0" id="wood" >小木屋</p>
       </a>
       <a href="#" class="text-center category-item" data-target="category2">
         <img src="https://a0.muscache.com/pictures/3b1eb541-46d9-4bef-abc4-c37d77e3c21b.jpg" alt="民宿">
-        <p class="mb-0">民宿</p>
+        <p class="mb-0" id="bnb" >民宿</p>
       </a>
       <a href="#" class="text-center category-item" data-target="category3">
         <img src="https://cdn-icons-png.flaticon.com/512/190/190590.png" alt="前衛風格">
@@ -85,16 +85,16 @@
   <!-- 類別內容 -->
   <div class="container mt-4  ">
     <div id="category1" class="category-content">
-      <h3>小木屋</h3>
+      <h3 id="content1">小木屋</h3>
       <p>
         <!-- 卡片區塊 -->
-      <div class="container mt-4">
+      <div class="container mt-f4">
         <div class="row">
           <!-- 卡片 1 -->
           <div class="col-md-3 mb-4">
             <div class="card h-100 hover-img hover-image:hover">
               <img
-                src="https://a0.muscache.com/im/pictures/b2c0f556-f726-4db8-985f-25a668369fe7.jpg?im_w=720&im_format=avif"
+                src="./img/b2c0f556-f726-4db8-985f-25a668369fe7.webp"
                 class="card-img-top" alt="日本 Shinano, Kamiminochi District">
               <div class="card-body">
                 <h5 class="card-title">日本 Shinano, Kamiminochi</h5>
@@ -210,28 +210,34 @@
       });
     });
 
+
     const translations = {
-  zh: {
-    searchBar: "地點 搜尋目的地",
-    
-  },
-  en: {
-    earchBar: "search bar",
-   
-  },
-  ja: {
-    title: "私のウェブサイトへようこそ",
-  }
-};
+      zh: {
+        wood: "小木屋",
+        bnb: "民宿",
+      },
+      en: {
+        wood: "Cabin",
+        bnb: "Bed and Breakfast",
+      },
+      es: {
+        wood: "Cabaña",
+        bnb: "Casa Rural",
+      }
+    };
+
+    document.getElementById('language-select').addEventListener('change', function() {
+      const selectedLanguage = this.value;
+
+      document.getElementById('wood').textContent = translations[selectedLanguage].wood;
+      document.getElementById('bnb').textContent = translations[selectedLanguage].bnb;
+    });
+
+</script>
 
 
-
-
-
-
-  </script>
 </body>
 
 </html>
 
-<!--ggg-->
+
