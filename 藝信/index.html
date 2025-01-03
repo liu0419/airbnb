@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>index</title>
+  <!-- 引入 Bootstrap -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="airbnb.css"/>
+
+ 
+</head>
+
+<body>
+  <!-- 頂部導覽列 -->
+  <nav class="navbar navbar-expand-lg navbar-light">
+    <div class="container">
+      <!-- 左側Logo -->
+      <a class="navbar-brand" href="#">
+        <img src="https://tomorrowhubs.com/upload/users/image/airbnb(1).png" alt="Airbnb Logo">
+      </a>
+      <!-- 漢堡選單按鈕 -->
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <!-- 搜尋欄和右側按鈕 -->
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav " style="margin-left: auto; padding:0px 20px">
+          <li class="nav-item w-60">
+            <div class="searchBar d-flex align-items-center  ">
+              <input id="search-bar" type="text" placeholder="地點 搜尋目的地" class="form-control tranlatable">
+              <button class="btn">
+                <i class="bi bi-search"></i>
+              </button>
+            </div>
+          </li>
+        </ul>
+        <ul class="navbar-nav" style="align-items: center">
+          <select id="language-select" onchange="changeLanguage()" style="height: 30px;width: 90px; ">
+            <option value="en">English</option>
+            <option value="zh">中文</option>
+            <option value="es">Español</option>
+            <!-- 更多語言選項 -->
+          </select>
+          <li class="nav-item">
+            <a href="#" class="nav-link">
+              <i class="bi bi-person-circle icon-menu" style="font-size:2rem"></i>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- 類別欄 -->
+  <div class="container-fluid border-bottom py-2 image-container">
+
+    <div class="d-flex justify-content-around category-icons image-container">
+      <a href="#" class="text-center category-item " data-target="category1">
+        <img src="https://a0.muscache.com/pictures/747b326c-cb8f-41cf-a7f9-809ab646e10c.jpg" alt="小木屋">
+        <p class="mb-0">小木屋</p>
+      </a>
+      <a href="#" class="text-center category-item" data-target="category2">
+        <img src="https://a0.muscache.com/pictures/3b1eb541-46d9-4bef-abc4-c37d77e3c21b.jpg" alt="民宿">
+        <p class="mb-0">民宿</p>
+      </a>
+      <a href="#" class="text-center category-item" data-target="category3">
+        <img src="https://cdn-icons-png.flaticon.com/512/190/190590.png" alt="前衛風格">
+        <p class="mb-0">前衛風格</p>
+      </a>
+      <a href="#" class="text-center category-item" data-target="category4">
+        <img src="https://cdn-icons-png.flaticon.com/512/3448/3448384.png" alt="驚喜泳池">
+        <p class="mb-0">驚喜泳池</p>
+      </a>
+      <a href="#" class="text-center category-item" data-target="category5">
+        <img src="https://cdn-icons-png.flaticon.com/512/2917/2917783.png" alt="牧羊人小屋">
+        <p class="mb-0">牧羊人小屋</p>
+      </a>
+    </div>
+  </div>
+
+  <!-- 類別內容 -->
+  <div class="container mt-4  ">
+    <div id="category1" class="category-content">
+      <h3>小木屋</h3>
+      <p>
+        <!-- 卡片區塊 -->
+      <div class="container mt-4">
+        <div class="row">
+          <!-- 卡片 1 -->
+          <div class="col-md-3 mb-4">
+            <div class="card h-100 hover-img hover-image:hover">
+              <img
+                src="https://a0.muscache.com/im/pictures/b2c0f556-f726-4db8-985f-25a668369fe7.jpg?im_w=720&im_format=avif"
+                class="card-img-top" alt="日本 Shinano, Kamiminochi District">
+              <div class="card-body">
+                <h5 class="card-title">日本 Shinano, Kamiminochi</h5>
+                <p class="card-text">距離 2,064 公里<br>3月2日至7日</p>
+                <p class="fw-bold">$15,190 TWD / 晚</p>
+                <p><i class="bi bi-star-fill text-warning"></i> 4.94</p>
+                <button type="button" class="w-100 btn btn-lg btn-outline-primary">Book</button>
+              </div>
+            </div>
+          </div>
+
+          <!-- 卡片 2 -->
+          <div class="col-md-3 mb-4">
+            <div class="card h-100 hover-img hover-image:hover">
+              <img
+                src="https://a0.muscache.com/im/pictures/f0ea4cba-c771-41b6-92c5-caa646edb513.jpg?im_w=720&im_format=avif.jpg"
+                class="card-img-top" alt="印度 Jibhi">
+              <div class="card-body">
+                <h5 class="card-title">印度 Jibhi</h5>
+                <p class="card-text">距離 4,351 公里<br>2月4日至9日</p>
+                <p class="fw-bold">$2,243 TWD / 晚</p>
+                <p><i class="bi bi-star-fill text-warning"></i> 4.89</p>
+                <button type="button" class="w-100 btn btn-lg btn-outline-primary">Book</button>
+              </div>
+            </div>
+          </div>
+
+          <!-- 卡片 3 -->
+          <div class="col-md-3 mb-4">
+            <div class="card h-100 hover-img hover-image:hover">
+              <img
+                src="https://a0.muscache.com/im/pictures/miso/Hosting-851221457069159416/original/827b7144-bfa4-4bb0-bd69-02579295bf9b.jpeg?im_w=720&im_format=avif"
+                class="card-img-top " alt="印度 Jibhi">
+              <div class="card-body">
+                <h5 class="card-title">夏威夷 Hawaii</h5>
+                <p class="card-text">距離 4,350 公里<br>1月14日至19日</p>
+                <p class="fw-bold">$4,936 TWD / 晚</p>
+                <p><i class="bi bi-star-fill text-warning"></i> 4.95</p>
+                <button type="button" class="w-100 btn btn-lg btn-outline-primary">Book</button>
+              </div>
+            </div>
+          </div>
+
+          <!-- 卡片 4 -->
+          <div class="col-md-3 mb-4">
+            <div class="card h-100 hover-img hover-image:hover">
+              <img
+                src="https://a0.muscache.com/im/pictures/miso/Hosting-824254092645253914/original/299f89ab-b4b5-4120-99ca-f6c5ae0b10dc.jpeg?im_w=720&im_format=avif"
+                class="card-img-top" alt="斯里蘭卡 Hemmathagama">
+              <div class="card-body">
+                <h5 class="card-title">斯里蘭卡 Hemmathagama</h5>
+                <p class="card-text">距離 4,776 公里<br>1月8日至13日</p>
+                <p class="fw-bold">$11,544 TWD / 晚</p>
+                <p><i class="bi bi-star-fill text-warning"></i> 4.85</p>
+                <button type="button" class="w-100 btn btn-lg btn-outline-primary mt-auto">Book</button>
+              </div>
+            </div>
+
+          </div>
+        </div>
+        </p>
+      </div>
+    </div>
+
+    <div id="category2" class="category-content">
+      <h3>傳奇</h3>
+      
+    </div>
+
+    <div id="category3" class="category-content">
+      <h3>前衛風格</h3>
+      <p>這是前衛風格類別的內容...</p>
+    </div>
+    <div id="category4" class="category-content">
+      <h3>驚喜泳池</h3>
+      <p>這是驚喜泳池類別的內容...</p>
+    </div>
+    <div id="category5" class="category-content">
+      <h3>牧羊人小屋</h3>
+      <p>這是牧羊人小屋類別的內容...</p>
+    </div>
+  </div>
+
+  <footer class="bg-dark text-white py-4">
+    <div class="container text-center">
+      <p class="mb-2">© 2025 Your Website. All Rights Reserved.</p>
+      <p>
+        <a href="#" class="text-white mx-2">隱私政策</a> |
+        <a href="#" class="text-white mx-2">服務條款</a> |
+        <a href="#" class="text-white mx-2">聯絡我們</a>
+      </p>
+    </div>
+  </footer>
+
+  <!-- 引入 Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+  <!-- 添加自定義 JavaScript -->
+  <script>
+    document.querySelectorAll('.category-item').forEach(item => {
+      item.addEventListener('click', function (event) {
+        // 防止重新載入頁面
+        event.preventDefault();
+
+        // 隱藏所有內容
+        document.querySelectorAll('.category-content').forEach(content => {
+          content.style.display = 'none';
+        });
+
+        // 顯示對應內容
+        const target = this.getAttribute('data-target');
+        document.getElementById(target).style.display = 'block';
+      });
+    });
+
+    const translations = {
+  zh: {
+    searchBar: "地點 搜尋目的地",
+    
+  },
+  en: {
+    earchBar: "search bar",
+   
+  },
+  ja: {
+    title: "私のウェブサイトへようこそ",
+  }
+};
+
+
+
+
+
+
+  </script>
+</body>
+
+</html>
+
+<!--ggggg-->
