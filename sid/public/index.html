@@ -151,8 +151,9 @@
       </div>
     </div>
 
-    <div id="category2" class="category-content">
-      <h3>傳奇</h3>
+    <div id="category2" style="display: none;">
+      <div id="content2" class="row"></div>
+
 
     </div>
 
@@ -199,97 +200,53 @@
         // 顯示對應內容
         const target = this.getAttribute('data-target');
         document.getElementById(target).style.display = 'block';
+        this.getAttribute('data-target');
+
+        // Get tab status
+        let type ;
+        if (target === "category1") {
+          type = 1;
+        } else if (target === "category2") {
+          type = 2;
+        }
+        console.log("type=", type)
+        getData(type)
+
+
       });
     });
 
-
-    const translations = {
-      zh: {
-        wood: "小木屋",
-        bnb: "民宿",
-      },
-      en: {
-        wood: "Cabin",
-        bnb: "Bed and Breakfast",
-      },
-      es: {
-        wood: "Cabaña",
-        bnb: "Casa Rural",
-      }
-    };
-
-    document.getElementById('language-select').addEventListener('change', function () {
-      const selectedLanguage = this.value;
-
-      document.getElementById('wood').textContent = translations[selectedLanguage].wood;
-      document.getElementById('bnb').textContent = translations[selectedLanguage].bnb;
-    });
-
-    // const card = [
-    //   {
-    //     img1: "./img/b2c0f556-f726-4db8-985f-25a668369fe7.webp",
-    //     img2: "https://a0.muscache.com/im/pictures/miso/Hosting-824254092645253914/original/299f89ab-b4b5-4120-99ca-f6c5ae0b10dc.jpeg?im_w=720&im_format=avif",
-    //     img3: "./img/b2c0f556-f726-4db8-985f-25a668369fe7.webp",
-    //     title: "日本 Shinano, Kamiminoch",
-    //     content: "距離 2,064 公里<br>3月2日至7日",
-    //     price: "$15,190 TWD / 晚",
-    //     rate: 4.94,
-    //     product: "product1"
-    //   },
-    //   {
-    //     img1: "https://a0.muscache.com/im/pictures/f0ea4cba-c771-41b6-92c5-caa646edb513.jpg?im_w=720&im_format=avif.jpg",
-    //     img2: "https://a0.muscache.com/im/pictures/miso/Hosting-824254092645253914/original/299f89ab-b4b5-4120-99ca-f6c5ae0b10dc.jpeg?im_w=720&im_format=avif",
-    //     img3: "./img/b2c0f556-f726-4db8-985f-25a668369fe7.webp",
-    //     title: "印度 Jibhi",
-    //     content: "距離 4,351 公里<br>2月4日至9日",
-    //     price: "$2,243 TWD / 晚",
-    //     rate: 4.89,
-    //     product: "product2"
-    //   },
-    //   {
-    //     img1: "https://a0.muscache.com/im/pictures/miso/Hosting-851221457069159416/original/827b7144-bfa4-4bb0-bd69-02579295bf9b.jpeg?im_w=720&im_format=avif",
-    //     img2: "https://a0.muscache.com/im/pictures/miso/Hosting-824254092645253914/original/299f89ab-b4b5-4120-99ca-f6c5ae0b10dc.jpeg?im_w=720&im_format=avif",
-    //     img3: "./img/b2c0f556-f726-4db8-985f-25a668369fe7.webp",
-    //     title: "夏威夷 Hawaii",
-    //     content: "距離 4,350 公里<br>1月14日至19日",
-    //     price: "$4,936 TWD / 晚",
-    //     rate: 4.95,
-    //     product: "product3"
-    //   },
-    //   {
-    //     img1: "https://a0.muscache.com/im/pictures/miso/Hosting-824254092645253914/original/299f89ab-b4b5-4120-99ca-f6c5ae0b10dc.jpeg?im_w=720&im_format=avif",
-    //     img2: "https://a0.muscache.com/im/pictures/miso/Hosting-824254092645253914/original/299f89ab-b4b5-4120-99ca-f6c5ae0b10dc.jpeg?im_w=720&im_format=avif",
-    //     img3: "./img/b2c0f556-f726-4db8-985f-25a668369fe7.webp",
-    //     title: "斯里蘭卡 Hemmathagama",
-    //     content: "距離 4,776 公里<br>1月8日至13日",
-    //     price: "$11,544 TWD / 晚",
-    //     rate: 4.85,
-    //     product: "product4"
-    //   },
-    // ];
-
     // TODO
-    const type = 1;
-    //fetch(`/api/data?type=${type}`)
-    fetch(`/api/data`)
-      // fetch('/api/data')
-      .then(response => {
-        if (!response.ok) {
-          throw new Error('Network response was not ok');
-        }
-        return response.json(); // 解析 JSON 回應
-      })
-      .then(data => {
-        console.log(data)
-        // 取得 card 的內容
-        const card = data;
-        // 可根據需求將 card 資料顯示在頁面上
-        for (let i = 0; i < card.length; i++) {
-          // console.log(card[i].img, card[i].title, card[i].content, card[i].price)
+    // let type;
+    // if (getComputedStyle(document.getElementById('category1')).display === 'block') {
+    //   type = 1;
+    // } else if (getComputedStyle(document.getElementById('category2')).display === 'block') {
+    //   type = 2;
+    // }
+    // console.log("type=",type)
 
 
-          const content1 = document.getElementById("content1");
-          content1.innerHTML += `<div class="col-md-3 mb-4">
+
+    function getData(type) {
+      //fetch(`/api/data?type=${type}`)
+      fetch(`/mm/kk?typee=${type}`)
+        .then(response => {
+          if (!response.ok) {
+            throw new Error('Network response was not ok');
+          }
+          return response.json(); // 解析 JSON 回應
+        })
+        .then(data => {
+          console.log(data)
+          // 取得 card 的內容
+          const card = data;
+          // 可根據需求將 card 資料顯示在頁面上
+          for (let i = 0; i < card.length; i++) {
+            console.log(card[i].img, card[i].title, card[i].content, card[i].price)
+
+            let id = `content${type}`;
+            const content = document.getElementById(id);
+            content.innerHTML += `<div class="col-md-3 mb-4">
             <div class="card h-100 hover-img hover-image:hover">
               <div id="carouselExample${i}" class="carousel slide" data-bs-ride="carousel">
             <div class="carousel-inner" style="height: 200px">
@@ -324,12 +281,36 @@
             </div>
           </div>`
 
-        }
+          }
 
-      })
-      .catch(error => {
-        console.error('Error fetching data:', error);
-      });
+        })
+        .catch(error => {
+          console.error('Error fetching data:', error);
+        });
+    }
+
+    const translations = {
+      zh: {
+        wood: "小木屋",
+        bnb: "民宿",
+      },
+      en: {
+        wood: "Cabin",
+        bnb: "Bed and Breakfast",
+      },
+      es: {
+        wood: "Cabaña",
+        bnb: "Casa Rural",
+      }
+    };
+
+    document.getElementById('language-select').addEventListener('change', function () {
+      const selectedLanguage = this.value;
+
+      document.getElementById('wood').textContent = translations[selectedLanguage].wood;
+      document.getElementById('bnb').textContent = translations[selectedLanguage].bnb;
+    });
+
 
 
   </script>
@@ -358,10 +339,12 @@
     }
 
     // 綁定按鈕事件
+    /*
     document.getElementById("product1").addEventListener("click", () => updateCounter("p1"));
     document.getElementById("product2").addEventListener("click", () => updateCounter("p2"));
     document.getElementById("product3").addEventListener("click", () => updateCounter("p3"));
-    document.getElementById("product4").addEventListener("click", () => updateCounter("p4"));
+    document.getElementById("product4").addEventListener("click", () => updateCounter("p4")); 
+    */
 
   </script>
   <script>
